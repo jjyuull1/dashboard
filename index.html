@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Kota Bandung</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  body {
+    background: #f8f9fa;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <span class="navbar-brand mb-0 h1">Dashboard Kota Bandung</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tentang.html">Tentang</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h2>Eksplorasi Dashboard</h2>
+  <p>Visualisasi data Kota Bandung dalam berbagai kategori.</p>
+
+  <!-- Search -->
+  <form class="d-flex my-3">
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input id="searchInput" type="text" class="form-control" placeholder="Cari dashboard">
+      <button class="btn btn-primary" type="button" onclick="searchCards()">Cari</button>
+    </div>
+  </form>
+
+  <!-- Cards -->
+  <div class="row g-3" id="cardsContainer">
+  
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/search.js"></script>
+<script>
+// load kartu-kartu
+const container = document.getElementById('cardsContainer');
+const cards = [
+  'cards/kependudukan.html',
+  // tambah kartu lain di sini
+];
+
+Promise.all(cards.map(url =>
+  fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      container.appendChild(div.firstElementChild);
+    })
+)).then(() => {
+  // panggil initSearch setelah semua kartu sudah dimuat
+  initSearch();
+});
+</script>
+
+<footer style="
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+">
+  &copy; 2025 Dashboard Kota Bandung – Juli Arsi Sabrina & Laras Almanna Salwa.
+</footer>
+
+
+</body>
+</html>
