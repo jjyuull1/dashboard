@@ -1,12 +1,16 @@
+/* Warna latar belakang */
 body {
   background: #f8f9fa;
+  margin: 0;
 }
 
+/* Heading besar */
 h2 {
   margin-top: 20px;
   font-weight: bold;
 }
 
+/* Kartu dashboard */
 .card {
   margin-bottom: 20px;
 }
@@ -16,25 +20,23 @@ h2 {
   object-fit: cover;
 }
 
+/* Iframe Tableau */
 iframe {
   width: 100%;
   height: 80vh;
-}
-
-iframe {
   display: block;
   margin: 0 auto;
+  border: none;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Agar vertikal juga ditengah */
-  margin: 0;
-}
-
-.container {
-  max-width: 1200px; /* Sesuaikan dengan ukuran dashboardmu */
+/* Footer bawah */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }
