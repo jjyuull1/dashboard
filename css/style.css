@@ -26,3 +26,15 @@ iframe {
   margin: 0 auto;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Agar vertikal juga ditengah */
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px; /* Sesuaikan dengan ukuran dashboardmu */
+  width: 100%;
+}
