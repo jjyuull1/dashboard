@@ -1,16 +1,17 @@
-/* Warna latar belakang */
+/* --- Umum dan background --- */
 body {
   background: #f8f9fa;
   margin: 0;
+  padding: 0;
 }
 
-/* Heading besar */
+/* --- Heading --- */
 h2 {
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* Kartu dashboard */
+/* --- Kartu dashboard --- */
 .card {
   margin-bottom: 20px;
 }
@@ -20,16 +21,21 @@ h2 {
   object-fit: cover;
 }
 
-/* Iframe Tableau */
-iframe {
-  width: 100%;
-  height: 80vh;
-  display: block;
-  margin: 0 auto;
-  border: none;
+/* --- Embed Tableau iframe --- */
+.dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0; /* jarak atas-bawah */
 }
 
-/* Footer bawah */
+.dashboard-wrapper iframe {
+  width: 1000px;     /* bisa kamu ubah sesuai ukuran dashboard */
+  height: 800px;
+  border: none;
+  display: block;
+}
+
+/* --- Footer --- */
 footer {
   background-color: #f1f1f1;
   text-align: center;
