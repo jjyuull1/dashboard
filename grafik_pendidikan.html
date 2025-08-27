@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grafik Pendidikan</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    .header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 60px); 
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER BIRU -->
+  <div class="header" style="position: relative;">
+  <div style="position: absolute; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 18px;">
+    Pendidikan
+  </div>
+  <div style="margin-left: auto;">
+    <a href="index.html">Beranda</a>
+    <a href="tentang.html" style="margin-left: 20px;">Tentang</a>
+  </div>
+</div>
+  
+<!-- CONTAINER AGAR IFRAME TENGAH -->
+<div style="display: flex; justify-content: center; padding: 20px 0;">
+  <iframe 
+    src="https://public.tableau.com/views/Book4_17558149344100/Dashboard1?:embed=y&:display_count=yes&:showVizHome=no" 
+    width="1200" 
+    height="800" 
+    frameborder="0" 
+    style="border: none;" 
+    allowfullscreen>
+  </iframe>
+</div>
+</div>
+
+
+  <footer style="
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+  position: fixed;
+  bottom: 0;
+  width: 100%;">
+  &copy; 2025 Dashboard Kota Bandung – Juli Arsi Sabrina & Laras Almanna Salwa.
+</footer>
+</body>
+</html>

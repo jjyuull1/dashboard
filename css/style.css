@@ -1,28 +1,169 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
 body {
-  background: #f8f9fa;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background-color: #007BFF; /* fallback jika tidak pakai gambar */
+  /* Jika mau pake gambar background global, uncomment baris berikut dan ganti path */
+  /* background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/bg-bandung.jpg') center/cover no-repeat fixed; */
 }
 
-h2 {
-  margin-top: 20px;
-  font-weight: bold;
+/* Header */
+header {
+  background-color: #0056b3;
+  padding: 18px 24px;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.card {
-  margin-bottom: 20px;
+/* Section biru / Hero */
+.section-biru { 
+  background-color: transparent; /* body sudah biru; ubah bila mau gambar spesifik */
+  padding: 40px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-.card-img-top {
-  height: 150px;
-  object-fit: cover;
-}
-
-iframe {
-  width: 100%;
-  height: 80vh;
-}
-
-iframe {
-  display: block;
+/* Hero layout */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 30px 20px;
 }
 
+/* Teks hero */
+.hero-text {
+  flex: 1 1 480px;
+  max-width: 55%;
+}
+
+/* Heading dengan 'gaung' (glow) */
+.hero-text h1 {
+  font-size: 2.2rem;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  color: #ffffff;
+  /* glow effect */
+  text-shadow: 0 6px 18px rgba(0,123,255,0.35), 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* Paragraf */
+.hero-text p {
+  margin-bottom: 18px;
+  opacity: 0.95;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Search kecil */
+.search {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.search input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  min-width: 220px;
+}
+.search button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #ffffff;
+  color: #007BFF;
+  font-weight: 600;
+  cursor: pointer;
+  /* subtle glow */
+  box-shadow: 0 6px 18px rgba(0,123,255,0.18);
+}
+
+/* Hero image / iframe wrapper (responsive) */
+.hero-image {
+  flex: 1 1 420px;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive iframe: maintain aspect ratio */
+.embed-wrapper {
+  width: 100%;
+  /* aspect ratio 16:9 => padding-top: 56.25% */
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35), inset 0 0 80px rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.03);
+}
+.embed-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* gentle inner glow */
+  box-shadow: 0 6px 30px rgba(0,123,255,0.08);
+  border-radius: 8px;
+}
+
+/* Container utama cards */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Card dengan glow */
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 24px rgba(0,123,255,0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* Footer */
+footer {
+  background-color: #0056b3;
+  padding: 16px;
+  text-align: center;
+  margin-top: 40px;
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 24px 12px;
+    gap: 18px;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-image { max-width: 100%; }
+  .hero-text h1 { font-size: 1.6rem; text-align: center; }
+  .search { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 1.25rem; }
+  .embed-wrapper { padding-top: 66.66%; } /* portrait-ish on very small screens */
+}

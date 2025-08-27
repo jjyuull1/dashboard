@@ -13,6 +13,7 @@ function initSearch() {
       } else {
         card.parentElement.style.display = "none";
       }
+      
     });
   });
 }
